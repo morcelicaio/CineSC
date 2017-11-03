@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioDeVendaDeIngressos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d44e3618-3515-4ba4-bd2d-30c9975c2b1f">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT I.codFilme, F.nomeFilme, F.anoLancamento, SUM(I.valorTotal) AS valorTotal
+FROM Filme F
+JOIN Ingresso I
+ON F.codFilme = I.codFilme
+GROUP BY F.codFilme;]]>
+	</queryString>
+	<field name="codFilme" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeFilme" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anoLancamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nomeFilme">
+		<groupExpression><![CDATA[$F{nomeFilme}]]></groupExpression>
+	</group>
+	<group name="categoriaFilme">
+		<groupExpression><![CDATA[$F{anoLancamento}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="214" splitType="Stretch">
+			<staticText>
+				<reportElement x="89" y="173" width="406" height="41" uuid="124cbd58-53d2-45ca-b381-c890131246c1"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Comic Sans MS" size="24" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Relatório de Venda de Ingressos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="65" width="229" height="20" uuid="49a3b652-0c1c-4183-9af1-945910fd7465"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço: Rua das Américas, N° 1375]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="14" width="151" height="20" uuid="13fdbcc8-8d3d-4035-a48b-e0b132b06be8"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cidade: São Carlos, SP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="14" width="100" height="20" uuid="3d49c139-7c61-4c61-ac2a-174966e67a28"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP: 13825-730]]></text>
+			</staticText>
+			<image>
+				<reportElement x="13" y="3" width="189" height="154" uuid="40427276-cbd8-49ac-9b57-e108cdd05255"/>
+				<imageExpression><![CDATA["C:\\Instalacoes--Utilitarios\\projetos_javaFX_caio\\ProjetoCinema\\iReport_relatoriosDoSistema\\logotipo_cinetech2.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="380" y="40" width="150" height="20" uuid="9a35db7f-59d2-4970-806d-824058d44d35"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone: (16) 3355-5533]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="40" width="100" height="20" uuid="5af02a59-71c6-48c9-ad19-a5a4887e7fcb"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro: Centro]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="266" y="107" width="185" height="20" uuid="8ef85f12-9583-4e1e-928c-51f945fd483d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="416" y="137" width="125" height="20" uuid="267936a6-199b-4f02-bab7-a4a1681e318a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="266" y="137" width="150" height="20" uuid="708d5189-da93-4062-955c-e11923852340"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horário de Lançamento:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="17" width="63" height="20" uuid="3fe8f902-8bea-4c3e-970a-dc1f4eaf87b5"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="16" width="53" height="20" uuid="9d47abea-05ae-4701-b1ad-b4aecf099b0b"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Filme ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="16" width="38" height="20" uuid="c8023386-a95f-458c-a64a-cef5586b159f"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ano]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="16" width="126" height="20" uuid="3e7cc349-cf34-4851-887f-7419c191856b"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Arrecadado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="37" width="554" height="1" uuid="f5404081-9cec-47e3-9ed7-5b49f7935c6e"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="0" width="31" height="20" uuid="90926d0b-ec19-4334-bbd9-ba1b2c86e379"/>
+				<textFieldExpression><![CDATA[$F{codFilme}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="178" height="20" uuid="6d197125-e0cc-4ef3-87de-ec65ec1625b7"/>
+				<textFieldExpression><![CDATA[$F{nomeFilme}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="100" height="20" uuid="5fb2ea31-ed1f-4859-be20-f3a05cdbad29"/>
+				<textFieldExpression><![CDATA[$F{anoLancamento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="444" y="0" width="75" height="20" uuid="778ee3e9-dfdf-4160-8f25-4fc8396442e3"/>
+				<textFieldExpression><![CDATA[$F{valorTotal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="45" uuid="2b17b1d8-01b8-4a7a-bbcf-09791c6e65c8"/>
+			</line>
+			<line>
+				<reportElement x="1" y="43" width="555" height="1" uuid="e6468f78-cdec-4c13-b73b-cd5cced274a4"/>
+			</line>
+			<line>
+				<reportElement x="71" y="0" width="1" height="42" uuid="412a8e99-d2c9-4c39-bf65-4ae7e8e41197"/>
+			</line>
+			<line>
+				<reportElement x="555" y="-2" width="1" height="44" uuid="86c8d5c0-c263-4bed-ba74-6f5523cddc69"/>
+			</line>
+			<line>
+				<reportElement x="416" y="0" width="1" height="42" uuid="33e78b58-30f9-4a88-8434-bbf0280769b6"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="131" y="25" width="171" height="20" uuid="cd4faae0-de59-4091-a212-fb67c166ae6b"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="302" y="25" width="40" height="20" uuid="200b1ca9-113a-499c-9378-73bce8cbcf8f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="528" y="34" width="19" height="20" uuid="efdf6ca3-494b-4c29-a40c-a1fc332feb98"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="34" width="126" height="20" uuid="577429d5-8c63-4c13-a255-d4b8feff624d"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de páginas:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="68" splitType="Stretch"/>
+	</summary>
+</jasperReport>
