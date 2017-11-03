@@ -1,4 +1,0 @@
-esse jar xalan é o jar do iReport
-jfoenix  é o jar  do componente do relógio na tela de sessões (JFXTimePicker).
-Lá dentro da biblioteca do projeto no eclipse,  existem vários outros .jars
-que foram adicionados. São todos referentes ao iReport tbm além do xalan.jar.
