@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="653.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.empresa.controller.VenderIngressoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c1c1" height="624.0" layoutX="14.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" width="912.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="593.0" layoutX="30.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="880.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="541.0" layoutX="48.0" layoutY="66.0" stroke="#aeaeae" strokeType="INSIDE" width="846.0" />
+      <Label layoutX="47.0" layoutY="45.0" text="Venda de Ingressos">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="84.0" text="Buscar Sessão Por Filme">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfBuscarSessao" layoutX="62.0" layoutY="100.0" onKeyReleased="#buscarSessaoPelaStringDigitada" prefHeight="25.0" prefWidth="321.0" promptText="Digite o nome do filme" />
+      <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="356.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/Lupa.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tvTabelaSessao" layoutX="61.0" layoutY="136.0" onMouseClicked="#pressionarItemTabelaSessao" prefHeight="296.0" prefWidth="817.0">
+        <columns>
+          <TableColumn fx:id="tcCodFilme" prefWidth="75.0" style="-fx-alignment: CENTER;" text="codFilme" visible="false" />
+          <TableColumn fx:id="tcDataSessao" prefWidth="97.0" style="-fx-alignment: CENTER;" text="Data Da Sessão" />
+            <TableColumn fx:id="tcNroSala" prefWidth="39.0" style="-fx-alignment: CENTER;" text="Sala" />
+            <TableColumn fx:id="tcNomeFilme" prefWidth="294.0" style="-fx-alignment: CENTER;" text="Filme" />
+            <TableColumn fx:id="tcLinguagemFilme" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Linguagem" />
+            <TableColumn fx:id="tcHoraInicio" prefWidth="71.0" style="-fx-alignment: CENTER;" text="Início" />
+            <TableColumn fx:id="tcHoraFim" prefWidth="71.0" style="-fx-alignment: CENTER;" text="Término" />
+            <TableColumn fx:id="tcPoltronasDisponiveis" prefWidth="94.0" style="-fx-alignment: CENTER;" text="Poltronas Livres" />
+            <TableColumn fx:id="tcPreco" prefWidth="74.0" style="-fx-alignment: CENTER;" text="Preço" />
+            <TableColumn fx:id="tcCodSala" prefWidth="75.0" text="codSala" visible="false" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="cbTipoIngresso" layoutX="62.0" layoutY="470.0" onMouseExited="#SelecionarTipoIngresso" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="62.0" layoutY="453.0" text="Selecione o tipo de ingresso">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="512.0" text="Selecione a forma de pagamento">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="cbFormaPagamento" layoutX="62.0" layoutY="529.0" onMouseClicked="#SelecionarFormaPagamento" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="263.0" layoutY="452.0" text="Valor Unitário">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="263.0" layoutY="474.0" text="R$">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbValorIngresso" layoutX="282.0" layoutY="473.0" text="valor" textFill="#021df7">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnVenderIngresso" layoutX="701.0" layoutY="454.0" mnemonicParsing="false" onAction="#venderIngresso" prefHeight="62.0" prefWidth="177.0" text="Vender Ingresso">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnCancelar" layoutX="701.0" layoutY="529.0" mnemonicParsing="false" onAction="#voltarAoMenu" prefHeight="62.0" prefWidth="177.0" text="Cancelar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnEscolherPoltrona" layoutX="396.0" layoutY="529.0" mnemonicParsing="false" onAction="#escolherPoltrona" prefHeight="62.0" prefWidth="177.0" text="Escolher Poltrona">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

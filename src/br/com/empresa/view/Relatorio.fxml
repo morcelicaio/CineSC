@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+ 
+<AnchorPane prefHeight="679.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.empresa.controller.RelatorioController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c1c1" height="680.0" layoutX="18.0" layoutY="19.0" stroke="WHITE" strokeType="INSIDE" width="818.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="641.0" layoutX="37.0" layoutY="39.0" stroke="WHITE" strokeType="INSIDE" width="780.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="554.0" layoutX="53.0" layoutY="73.0" stroke="#aeaeae" strokeType="INSIDE" width="748.0" />
+      <Label layoutX="53.0" layoutY="52.0" text="Ingressos Vendidos">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvTabelaRelatorio" layoutX="68.0" layoutY="90.0" prefHeight="518.0" prefWidth="717.0">
+        <columns>
+          <TableColumn fx:id="tcCodIngresso" prefWidth="75.0" style="-fx-alignment: CENTER;" text="codIngresso" visible="false" />
+          <TableColumn fx:id="tcCodFilme" prefWidth="75.0" style="-fx-alignment: CENTER;" text="codFilme" visible="false" />
+            <TableColumn fx:id="tcCodSala" prefWidth="75.0" style="-fx-alignment: CENTER;" text="codSala" visible="false" />
+            <TableColumn fx:id="tcNomeFilme" prefWidth="401.0" style="-fx-alignment: CENTER;" text="Filme" />
+            <TableColumn fx:id="tcAnoLancamentoFilme" prefWidth="51.0" style="-fx-alignment: CENTER;" text="Ano" />
+            <TableColumn fx:id="tcCategoriaFilme" prefWidth="148.0" style="-fx-alignment: CENTER;" text="Categoria" />
+            <TableColumn fx:id="tcValorArrecadadoFilme" prefWidth="115.0" style="-fx-alignment: CENTER;" text="Valor Arrecadado" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnVoltar" layoutX="701.0" layoutY="634.0" mnemonicParsing="false" onAction="#voltarAoMenu" prefHeight="39.0" prefWidth="100.0" text="Voltar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import br.com.empresa.util.*?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.empresa.controller.CadastrarSessaoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c1c1" height="651.0" layoutX="14.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" width="1112.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="617.0" layoutX="29.0" layoutY="31.0" stroke="WHITE" strokeType="INSIDE" width="1080.0" AnchorPane.leftAnchor="29.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="291.0" layoutX="46.0" layoutY="56.0" stroke="#aeaeae" strokeType="INSIDE" width="1040.0" />
+      <Label layoutX="46.0" layoutY="40.0" text="Dados Cadastrais">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvTabelaFilme" layoutX="60.0" layoutY="97.0" onMouseClicked="#pressionarItemTabelaFilme" prefHeight="230.0" prefWidth="470.0" style="-fx-alignment: CENTER;">
+        <columns>
+          <TableColumn fx:id="tcCodFilme" prefWidth="75.0" text="codFilme" visible="false" />
+          <TableColumn fx:id="tcNomeFilme" prefWidth="264.0" style="-fx-alignment: CENTER;" text="Nome do Filme" />
+            <TableColumn fx:id="tcCategoriaFilme" prefWidth="104.0" style="-fx-alignment: CENTER;" text="Categoria" />
+            <TableColumn fx:id="tcLinguagemFilme" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Linguagem" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tvTabelaSala" layoutX="549.0" layoutY="96.0" onMouseClicked="#pressionarItemTabelaSala" prefHeight="231.0" prefWidth="200.0" style="-fx-alignment: CENTER;">
+        <columns>
+          <TableColumn fx:id="tcCodSala" prefWidth="75.0" text="codSala" visible="false" />
+          <TableColumn fx:id="tcNroSala" prefWidth="86.0" style="-fx-alignment: CENTER;" text="N° da Sala" />
+            <TableColumn fx:id="tcQtdAssentos" prefWidth="113.0" style="-fx-alignment: CENTER;" text="N° de Poltronas" />
+        </columns>
+      </TableView>
+      <Label layoutX="60.0" layoutY="79.0" text="Selecione o filme da nova sessão">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="550.0" layoutY="78.0" text="Selecione a sala da nova sessão">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="265.0" layoutX="46.0" layoutY="374.0" stroke="#aeaeae" strokeType="INSIDE" width="876.0" />
+      <Label layoutX="800.0" layoutY="145.0" text="Selecione o horário de início da nova sessão">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTimePicker fx:id="jfxtpHorarioInicio" defaultColor="BLACK" layoutX="803.0" layoutY="159.0" onMouseClicked="#cliqueHorarioInicio" prefHeight="28.0" prefWidth="187.0" />
+      <Label layoutX="800.0" layoutY="77.0" text="Selecione a data da nova sessão">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dpData" layoutX="800.0" layoutY="96.0" onMouseClicked="#cliqueDatePickerData" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="803.0" layoutY="217.0" text="Selecione o horário de fim da nova sessão" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTimePicker fx:id="jfxtpHorarioFim" defaultColor="BLACK" layoutX="803.0" layoutY="231.0" onMouseClicked="#cliqueHorarioFim" prefHeight="28.0" prefWidth="187.0" />
+      <Label layoutX="803.0" layoutY="294.0" prefHeight="15.0" prefWidth="191.0" text="Informe o valor da nova sessão" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label> 
+      <MascaraTextField fx:id="tfValorSessao" layoutX="1015.0" layoutY="289.0" prefHeight="25.0" prefWidth="61.0" />
+      <Label layoutX="994.0" layoutY="293.0" text="R$">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCadastrar" layoutX="935.0" layoutY="443.0" mnemonicParsing="false" onAction="#cadastrarSessao" prefHeight="43.0" prefWidth="150.0" text="Cadastrar Nova Sessão">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancelar" layoutX="935.0" layoutY="594.0" mnemonicParsing="false" onAction="#voltarAoMenu" prefHeight="43.0" prefWidth="150.0" text="Cancelar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="48.0" layoutY="356.0" text="Sessões Cadastradas">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvTabelaSessao" layoutX="56.0" layoutY="406.0" onMouseClicked="#pressionarItemTabelaSessoesCadastradas" prefHeight="224.0" prefWidth="855.0">
+        <columns>
+          <TableColumn fx:id="tcCodigoFilme" prefWidth="75.0" text="codFilme" visible="false" />
+          <TableColumn fx:id="tcDataSessao" prefWidth="91.0" style="-fx-alignment: CENTER;" text="Data da Sessão" />
+            <TableColumn fx:id="tcNumSala" prefWidth="69.0" style="-fx-alignment: CENTER;" text="N° da Sala" />
+            <TableColumn fx:id="tcNomeDoFilme" prefWidth="256.0" style="-fx-alignment: CENTER;" text="Filme" />
+            <TableColumn fx:id="tcLinguagemDoFilme" prefWidth="72.0" style="-fx-alignment: CENTER;" text="Linguagem" />
+            <TableColumn fx:id="tcHoraInicio" prefWidth="97.0" style="-fx-alignment: CENTER;" text="Início da Sessão" />
+            <TableColumn fx:id="tcHoraFim" prefWidth="94.0" style="-fx-alignment: CENTER;" text="Fim da Sessão" />
+            <TableColumn fx:id="tcPoltronasDisponiveis" prefWidth="101.0" style="-fx-alignment: CENTER;" text="Poltronas Livres" />
+            <TableColumn fx:id="tcPreco" prefWidth="74.0" style="-fx-alignment: CENTER;" text="Preço" />
+            <TableColumn fx:id="tcCodigoSala" prefWidth="75.0" text="codSala" visible="false" />
+        </columns>
+      </TableView>
+      <Label layoutX="60.0" layoutY="383.0" text="Buscar Sessão Por Filme">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfBuscarSessao" layoutX="216.0" layoutY="378.0" onKeyReleased="#buscarSessaoPelaTeclaDigitada" prefHeight="25.0" prefWidth="694.0" promptText="Digite o nome do filme" />
+      <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="888.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/Lupa.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="972.0" layoutY="320.0" text="Formato R$ 00.00" textFill="RED">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSelecionarSessao" layoutX="935.0" layoutY="374.0" mnemonicParsing="false" onAction="#selecionarSessao" prefHeight="43.0" prefWidth="150.0" text="Selecionar Sessão">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAlterarSessao" layoutX="935.0" layoutY="493.0" mnemonicParsing="false" onAction="#alterarSessao" prefHeight="43.0" prefWidth="150.0" text="Alterar Sessão">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnExcluirSessao" layoutX="935.0" layoutY="543.0" mnemonicParsing="false" onAction="#excluirSessao" prefHeight="43.0" prefWidth="150.0" text="Excluir Sessão">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbAlteracao" layoutX="267.0" layoutY="76.0" prefHeight="17.0" prefWidth="263.0" text="Informe os dados para a alteração da sessão." textFill="RED" visible="false">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+   </children> 
+</AnchorPane>

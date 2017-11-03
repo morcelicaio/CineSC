@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c1c1" height="351.0" layoutX="14.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" width="536.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="305.0" layoutX="39.0" layoutY="37.0" stroke="WHITE" strokeType="INSIDE" width="486.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="238.0" layoutX="58.0" layoutY="73.0" stroke="#aeaeae" strokeType="INSIDE" width="449.0" />
+      <Label layoutX="59.0" layoutY="54.0" prefHeight="17.0" prefWidth="183.0" text="Sobre">
+         <font> 
+            <Font name="Arial Bold" size="12.0" />
+         </font></Label>
+      <TextArea editable="false" layoutX="74.0" layoutY="87.0" prefHeight="215.0" prefWidth="416.0" text="&#10;Software  desenvolvido  pensando  em  atender as  necessidades de um&#10;cinema. Permite uma melhor forma de gerenciar/organizar seus serviços, &#10;visando a otimização e o lucro do estabelecimento.&#10;&#10;                      Desenvolvido por&#10;                      Caio L. Morceli&#10;                      &#10;&#10;                     - São Carlos, 25-05-2017 -&#10;&#10;" />
+     
+   </children> 
+</AnchorPane>
