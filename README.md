@@ -1,5 +1,5 @@
 # CineSC
-Projeto desenvolvido por mim, Caio Lazarini Morceli, no meu 5° período da faculdade (2017).
+Projeto desenvolvido por mim, Caio Lazarini Morceli, no meu 4° período da faculdade (2017).
 
 O sitema foi feito utilizando JavaFX e simula as tarefas de um cinema como por exemplo o cadastro de filmes, o cadastro de salas, o cadastro de sessões, a venda de ingressos e também os relatórios referente às vendas de ingressos.
 
