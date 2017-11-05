@@ -11,4 +11,4 @@ Quantas poltronas ainda estão disponíveis na sessão;
 
 Antes da venda do ingresso, o sistema ainda exibe a tela com todas as poltronas da sala, onde o cliente pode escolher o número da poltrona que deseja. As poltronas que vão sendo selecionadas vão ficando na cor vermelha enquanto as poltronas que ainda estão livres ficam verdes.
 
-O sistema encontra-se pronto para uso e possui as validações de erros necessárias para seu funcionamento.
+O sistema encontra-se pronto para uso e possui as validações de erros e tratamentos de excessões necessárias para seu funcionamento.
